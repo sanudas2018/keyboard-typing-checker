@@ -1,0 +1,37 @@
+
+          single card body 
+          <div class="card">
+            <h3>hi sanu ki korchis</h3>
+            <div class="card-inner">
+            <p>You took: <span class="bold">10.00</span> seconds</p>
+            <p>You made <span class="bold red">0 second</span> mistakes</p>
+            </div>
+          </div>
+          <!-- end  -->
+          <!-- single card body  -->
+          <div class="card">
+            <h3>hi sanu ki korchis</h3>
+            <div class="card-inner">
+            <p>You took: <span class="bold">10.00</span> seconds</p>
+            <p>You made <span class="bold red">0 second</span> mistakes</p>
+            </div>
+          </div>
+          <!-- end  -->
+          <!-- single card body  -->
+          <div class="card">
+            <h3>hi sanu ki korchis</h3>
+            <div class="card-inner">
+            <p>You took: <span class="bold">10.00</span> seconds</p>
+            <p>You made <span class="bold red">0 second</span> mistakes</p>
+            </div>
+          </div>
+          <!-- end  -->
+          <!-- single card body  -->
+          <div class="card">
+            <h3>hi sanu ki korchis</h3>
+            <div class="card-inner">
+            <p>You took: <span class="bold">10.00</span> seconds</p>
+            <p>You made <span class="bold red">0 second</span> mistakes</p>
+            </div>
+          </div>
+          <!-- end  -->
