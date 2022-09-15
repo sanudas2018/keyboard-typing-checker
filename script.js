@@ -19,13 +19,26 @@ fetch("./texts.json")
     question.innerHTML = questionText;
   });
 
+  // let characters = questionText.querySelectorAll("span");
+  // // let typeedChar = display
+  // console.log(characters);
+  // function initTyping(){
+  //     let characters = questionText.querySelectorAll("span");
+  // // let typeedChar = display
+  //     console.log(characters);
+  // }
+  // display.addEventListener("input", initTyping);
+// ................................. 
 // checks the user typed character and displays accordingly
 const typeController = (e) => {
   const newLetter = e.key;
-
+  // let typedChar = display.split("");
+  // console.log(typedChar);
   // Handle backspace press
   if (newLetter == "Backspace") {
+    // console.log(newLetter);
     userText = userText.slice(0, userText.length - 1);
+    console.log(userText);
     return display.removeChild(display.lastChild);
   }
 
@@ -43,13 +56,18 @@ const typeController = (e) => {
   const newLetterCorrect = validate(newLetter);
 
   if (newLetterCorrect) {
+    console.log('correct');
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
+    console.log('incorrect');
+    errorCount ++;
+    console.log(errorCount);
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
   }
 
   // check if given question text is equal to user typed text
   if (questionText === userText) {
+    console.log(questionText);
     gameOver();
   }
 };
@@ -67,8 +85,8 @@ const gameOver = () => {
   // the current time is the finish time
   // so total time taken is current time - start time
   const finishTime = new Date().getTime();
-  const timeTaken = (finishTime - startTime) / 1000;
-
+  const timeTakenRandomNumber = (finishTime - startTime) / 1000;
+  let timeTaken = parseInt(timeTakenRandomNumber);
   // show result modal
   resultModal.innerHTML = "";
   resultModal.classList.toggle("hidden");
