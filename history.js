@@ -3,7 +3,7 @@ const histories = document.getElementById("histories");
 function addHistory(questionText, timeTaken, errorCount) {
   console.log(questionText, timeTaken, errorCount);
   const newRow = document.createElement("div");
-  newRow.classList.add("card");
+  newRow.classList.add("card-body");
 
   newRow.innerHTML = `
  
@@ -35,7 +35,7 @@ function displayHistory() {
   previousTests.forEach((test) => {
     // console.log(test);
     const newRow = document.createElement("div");
-    newRow.classList.add("card");
+    newRow.classList.add("card-body");
 
     newRow.innerHTML = `
   <h3>${test.questionText}</h3>
@@ -46,3 +46,11 @@ function displayHistory() {
     histories.appendChild(newRow);
   });
 }
+
+const x = 5;
+{
+  const x = 10;
+  console.log(x); 
+}
+console.log(x); // error = y is not defined
+// ..... 

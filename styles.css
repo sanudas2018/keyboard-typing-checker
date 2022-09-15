@@ -30,6 +30,7 @@ body {
       rgba(255, 255, 255, 0.05) 99.85%);
   backdrop-filter: blur(5px);
   margin-bottom: 30px;
+  text-align: center;
 }
 
 #display {
@@ -156,7 +157,7 @@ button {
   width: 100%; */
 }
 
-/* .row {
+/* .row-card-card {
   background-color: #605858;
   width: 100%;
   display: flex;
@@ -166,7 +167,7 @@ button {
 
 } */
 
-.card {
+.card-body {
   width: 32.33%;
   height: 100%;
   /* padding: 20px; */
@@ -191,7 +192,7 @@ button {
 
 }
 
-.card h3 {
+.card-body h3 {
   text-align: center;
   /* margin-bottom: 6px; */
 }
@@ -223,8 +224,8 @@ button {
 
 
 @media only screen and (min-width:992px) {
-  .row {
-    /* background-color: red; */
+  .row-card {
+    background-color: rgba(30, 30, 51, 0.837);
     width: 100%;
     display: flex;
     justify-content: start;
@@ -232,7 +233,7 @@ button {
     flex-wrap: wrap;
   }
 
-  .card {
+  .card-body {
     width: 30.33%;
     display: flex;
     flex-direction: column;
@@ -241,19 +242,19 @@ button {
 
   }
 
-  .card h3 {
+  .card-body h3 {
     font-size: 1rem;
     margin-bottom: 8px;
   }
 
-  .card p {
+  .card-body p {
     font-size: 1rem;
   }
 }
 
 @media only screen and (max-width:991px) {
-  .row {
-    /* background-color: rgba(255, 0, 0, 0.423); */
+  .row-card {
+    background-color: rgba(30, 30, 51, 0.837);
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -273,8 +274,8 @@ button {
 }
 
 @media only screen and (max-width:767px) {
-  .row {
-    /* background-color: rgba(255, 0, 0, 0.423); */
+  .row-card {
+    background-color: rgba(30, 30, 51, 0.837);
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -282,7 +283,7 @@ button {
     flex-wrap: wrap;
   }
 
-  .card {
+  .card-body {
     width: 99%;
     display: flex;
     flex-direction: column;
@@ -291,11 +292,11 @@ button {
 
   }
 
-  .card h3 {
+  .card-body h3 {
     font-size: 1.2rem;
   }
 
-  .card p {
+  .card-body p {
     font-size: 1rem;
   }
 }
@@ -306,7 +307,7 @@ button {
     width: 100%;
   }
 
-  .card {
+  .card-body {
     flex-direction: column;
   }
 }
