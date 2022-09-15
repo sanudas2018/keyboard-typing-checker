@@ -1,7 +1,7 @@
 const histories = document.getElementById("histories");
 
 function addHistory(questionText, timeTaken, errorCount) {
-  console.log(questionText, timeTaken, errorCount);
+  // console.log(questionText, timeTaken, errorCount);
   const newRow = document.createElement("div");
   newRow.classList.add("card-body");
 
@@ -20,7 +20,7 @@ function addHistory(questionText, timeTaken, errorCount) {
   histories.appendChild(newRow);
 
   let previousTests = JSON.parse(localStorage.getItem("testHistory")) || [];
-  console.log(previousTests);
+  // console.log(previousTests);
   previousTests.push({ questionText, timeTaken, errorCount });
   localStorage.setItem("testHistory", JSON.stringify(previousTests));
 
@@ -49,8 +49,7 @@ function displayHistory() {
 
 const x = 5;
 {
-  const x = 10;
-  console.log(x); 
+  const x = 10; 
 }
-console.log(x); // error = y is not defined
+// console.log(x); // error = y is not defined
 // ..... 

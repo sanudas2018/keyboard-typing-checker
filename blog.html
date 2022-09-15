@@ -61,7 +61,32 @@
                      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                          
+                           <p>
+                              
+                              <strong>Local Storage:</strong>
+                              Local Stores data in the browser without any expiration date.
+                              Local Storage data should be stored as string
+                              Saves data in Key/value pairs in the browser.
+                              Local Storage data is permanent
+                              Data is not deleted when the browser is closed.
+                              Data is available for future sessions.
+                              Data capacity 10mb.
+                              Local Storage browsers in HTML5
+                           </p>
+                           <hr class="bg-success">
+                           <p>
+                              <strong>Session Storage:</strong>
+                              Stores data in the browser for a session.
+                              Session Storage data should be stored as string
+                              Session Storage data is temporary
+                              Saves data in Key/value pairs in the browser.
+                              Data is deleted when the browser is closed.
+                              Data is not available for future sessions.
+                              Data capacity 5mb.
+                              Session Storage browsers in HTML5
+                           </p>
+                              
+
                           
                         </div>
                      </div>
@@ -70,27 +95,66 @@
                      <h2 class="accordion-header" id="headingTwo">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                           What are the difference between map foreach filter and find?
+                           What are the difference between Global Scope and Block Scope?
                         </button>
                      </h2>
                      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                           <strong>map : </strong>
-                           Loops over each element of the array and returns any value at the end of the loop and
-                           creates a new array.
-                           <br>
-                           <strong>forEach : </strong> loops through each element of the array and returns no value at
-                           the end of the loop and creates a new array.
-                           <br>
+                          <p>
+                           <strong>Global Scope:</strong>
+                           Variables declared Globally (outside any function) have Global Scope.
+                           Global variables can be accessed from anywhere in a JavaScript program.
+                           Variables declared with var, let and const are quite similar when declared outside a block.
+                           They all have Global Scope:
+                        </p>
+                           <code>Const x=5;
+                              if(true){
+                              console.log(x) // output: 5
+                              }
+                              console.log(x) // output: 5
+                           </code>
+                        <hr>
+                        <p>
+                           <strong>Block Scope</strong>
+                           block scope is a JavaScript mechanism that defines a variable inside a block that cannot be accessed from outside. A variable with the same name can be created inside the block scope.
+                           <code>
+                              const x = 5;
+                              {
+                              const x = 10;
+                              console.log(x); 
+                              }
+                              console.log(x);
+                              VM45:4 10
+                              VM45:6 5
+                           </code><br>
                            <hr>
-                           <strong>filter : </strong> Filter Loops over each element of the array depending on one or
-                           more truths and returns an array of multiple elements matching the truth.
-                           <br>
-                           <strong>find : </strong> It loops over the elements of the array depending on one or more
-                           truths, but the find returns from where the truth matches and doesn't look at the next
-                           element. It returns the first matched element
-                           <br>
+                           <code>
+                              const x = 5;
+                                 {
+                                 const y = 10;
+                                 console.log(y);
+                                 }
+                                 console.log(y);
+                                 VM1692:4 10
+                                 // VM1692:6 Uncaught ReferenceError: y is not defined
+                           </code>
+                           <p> Variables declared inside a { } block cannot be accessed from outside the block:</p>
+                           <code>
+                              
+                              {
+                                 let x = 2;
+                                 }
+                                 // x can NOT be used here
+                                 Variables declared with the var keyword can NOT have block scope.
+                                 Variables declared inside a { } block can be accessed from outside the block.
+                                 {
+                                 var x = 2;
+                                 }
+                                 // x CAN be used here
+                           </code>
+
+                        </p>
 
                         </div>
                      </div>
@@ -99,24 +163,27 @@
                      <h2 class="accordion-header" id="headingThree">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                           Why use template literals?
+                           How to work Event Loop in javaScript?
                         </button>
                      </h2>
                      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                           <strong>Template Literals:</strong> Template literals are written in html-like
-                           syntax,Template literals are enclosed by backtick (`) characters instead of double or single
-                           quotes.
-                           providing an easy way to expand variables and expressions into strings. The method is called
-                           string interpolation.
-                           <div class="d-flex ">
-                              <strong>Example: </strong>
-                              <code>let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
-                                 <br>
-                                 let html = `<h5>${header}</h5>`;
-                              </code>
-                           </div>
+                           <p>
+                              Only javaScript is a single theater blocking synchronous programming language.And it reads the code from top to bottom. 
+                              But it actually works in the asynchronous way in the browser. It complies just in time.<br>
+                              Now that's how the Event Loop works:<br>
+                              <strong> 1. </strong>First, JavaScript runs its code in the JavaScript Engine (V8). Inside which resides Heap and Stack.<br>
+                              <strong> 1.1 </strong> JavaScript allocates memory on the heap<br>
+                              <strong> 1.2 </strong> When the JavaScript code executes, it goes on the stack, but it doesn't execute the browser API code at that time. This is LIFO.<br>
+                              <strong> 2. </strong> The second JavaScript takes its code from the Heap to the Stack and (from the stack to the console code), but if the Browser API has code like <code>(setTimeOut(()=>{console.log('HELLO')},2000))</code> by sending it to the Browser API will give.<br>
+                              <strong> 3. </strong> Third, the Browser API will pass its internal code to the callback queue.<br>
+                              <strong> 4. </strong> Fourth callback works like Queue (FIFO), the code here will be given to Event Loop.<br>
+                              <strong> 5. </strong> The fifth Event Loop will continuously check whether the call stack is empty or not, if it is empty then only the callback queue output will be given to the stack.<br>
+                              <strong> 6. </strong> sixth finally passes the stack <code>(console.log('HELLO'))</code> to the console and prints it to the console.
+
+                           </p>
+
                         </div>
                      </div>
                   </div>
@@ -124,56 +191,83 @@
                      <h2 class="accordion-header" id="headingForth">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                            data-bs-target="#collapseForth" aria-expanded="false" aria-controls="collapseForth">
-                           What are the difference between array function and regular function ?
+                           How many types of undefine can we get ?
                         </button>
                      </h2>
                      <div id="collapseForth" class="accordion-collapse collapse" aria-labelledby="headingForth"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                           <strong>Syntax: </strong>We can write normal and arrow function in this way.
-                           <br>
-                           <code>// ES5
-                              var add = function(x, y) {
-                              return x + y
-                              };<br>
-                              // ES6
-                              let add = (x, y) => x + y
-                           </code>
-                           <hr>
-                           <strong>This:</strong><br>
-                           • Simple Invocation: this equals the global object or maybe undefined if you
-                           are using strict
-                           mode. <br>
-                           • Method Invocation: this equals the object that owns the method. <br>
-                           • Arrow functions don’t have their own this, and they don’t redefine the value of this within
-                           the function.<br>
-                           • this inside an arrow function always refers to this from the outer context.
-                           <br>
-                           <hr>
-                           <strong>Implicit Return:</strong><br>
-                           In regular function, you have to use return keyword to return any value. If you don’t return
-                           anything then the function will return undefined.<br>
+                           <p>
+                              The purpose of an undefined data type is to denote an absence of a meaningful value. Many operations in JavaScript produce a meaningless result and to represent that, they return an undefined value, simply, because they have to return something!<br>
+                                <strong> 8 ways to get Undefine:</strong> <br>
+                                 <strong>1. </strong> A variable in JavaScript that is without any value has a value of undefined. The datatype of a variable that holds an undefined value is also 'undefined'.
+                                 <code>var x;       // Variables that are not initialized will give undefine.</code>
 
-                           You don't need to use return keyword in array function for single line. But in case of
-                           multiline, return has to be done. <code>const addOne = (number) => number + 1;
-                              addOne(10);</code>
-                           <br>
-                           <hr>
-                           <strong>Arguments binding :</strong> <br>
-                           In regular function, Arguments keywords can be used to access the arguments of which passed
-                           to function.
-                           Arrow functions do not have an arguments binding.
-                           <hr>
-                           <strong>Function Hoisting: </strong> <br>
-                           In regular function, function gets hoisting at top.
+                           </p><br>
+                           <p>
+                             <strong>2.</strong> If no value is returned from the function. <br> 
+                              <code>
+                                 function test(t) {
+                                    let sum = t + 10;
+                                    console.log(sum);
+                                    return ;
+                                   }
+                                   let x = 10;
+                                   console.log(test(x));
+                              </code>
 
-                           In arrow function, function get hoisted where you define. So, if you call the function before
-                           initialisation you will get referenceError.
+                           </p><br>
+                           <p>
+                              <strong>3.</strong> Parameter that is not passed will be undefined. <br>
+                              <code>
+                                 Function parameter(x,y,z){
+                                    Const total = x+y+z;
+                                    console.log(x,y,z);
+                                    }
+                                    parameter(1,2);
+                              </code>
 
 
-                           <div class="d-flex ">
+                           </p><br>
+                           <p>
+                              <strong>4. </strong> If return has nothing on the right side will return undefined.
+                           </p><br>
+                           <p>
+                              <strong>5.</strong> Property that does not exists on an object will give you undefined. <br>
+                              <code>Const student = {id: 1, name:’sanu’,age:40}
+                                 console.log(student.class);</code>
+                              
+                           </p><br>
+                           <p>
+                              <strong>6.</strong> Accessing array elements outside of the index range. <br>
+                             <code> Const student = [1,4,8,10,12];
+                              console.log(student[1], student[24] )
+                             </code>
+                              
+                           </p><br>
+                           <p>
+                             <strong>7.</strong> Deleting an element inside an array. <br>
+                             <code>
+                              Const student = [1,4,8,10,12];
+                              Delete student[1];
+                              console.log(student[1], student[24] )
 
-                           </div>
+                             </code>
+
+                           </p><br>
+                           <p>
+                              <strong>8. </strong>
+                              You can also empty an existing variable that has some existing value by setting its value as undefined. <br>
+                              <code>
+                                 var x = 100;
+                                 x = undefined;                    // its value is now 'undefined' and type is 'undefined'
+                                 Set a value directly to undefined.
+                                 X = null;
+
+                              </code>
+
+                           </p>
+
                         </div>
 
 
