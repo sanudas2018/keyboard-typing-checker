@@ -115,7 +115,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 15px;
-  margin: 0 auto;
+  margin: -5px auto;
 }
 
 .line {
@@ -132,7 +132,7 @@ body {
 .buttons {
   display: flex;
   justify-content: center;
-  margin: 30px 0;
+  margin: 20px 0;
 }
 
 button {
@@ -231,6 +231,9 @@ button {
     justify-content: start;
     align-items: flex-start;
     flex-wrap: wrap;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    padding: 10px;
   }
 
   .card-body {
@@ -245,6 +248,7 @@ button {
   .card-body h3 {
     font-size: 1rem;
     margin-bottom: 8px;
+    font-weight: bold;
   }
 
   .card-body p {
@@ -260,6 +264,8 @@ button {
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
+    margin-bottom: 40px;
+
   }
 
   .card {
@@ -281,6 +287,7 @@ button {
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
+    margin-bottom: 15px;
   }
 
   .card-body {
@@ -310,4 +317,10 @@ button {
   .card-body {
     flex-direction: column;
   }
+}
+
+.accordion-button::after {
+  color: rgb(211, 71, 139);
+  background: #fff;
+  border-radius: 50%;
 }
